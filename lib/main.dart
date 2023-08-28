@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/presentation/screens/reservations/reservations_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.dark(),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Horarios'),
+      // home: const MyHomePage(title: 'Horarios'),
+      home: const ReservationsScreens(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -41,8 +43,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -91,7 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               "Esta semana",
               textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 30.0, height: 3.0),),
+              style: TextStyle(fontSize: 30.0, height: 3.0),
+            ),
             const Text(
               "Martes 15 de Agosto",
               textAlign: TextAlign.left,
@@ -104,8 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     side: BorderSide(
                       color: Theme.of(context).colorScheme.outline,
                     ),
-                    borderRadius: const BorderRadius.all(Radius.circular(12))
-                ),
+                    borderRadius: const BorderRadius.all(Radius.circular(12))),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -125,7 +125,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ],
                     ),
-
                   ],
                 ),
               ),
@@ -134,11 +133,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Card(
                 elevation: 0,
                 shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    color: Theme.of(context).colorScheme.outline,
-                  ),
-                  borderRadius: const BorderRadius.all(Radius.circular(12))
-                ),
+                    side: BorderSide(
+                      color: Theme.of(context).colorScheme.outline,
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(12))),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -153,12 +151,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         OutlinedButton(
-                            child: Text("Disponible"),
-                            onPressed: () {},
+                          child: Text("Disponible"),
+                          onPressed: () {},
                         ),
                       ],
                     ),
-
                   ],
                 ),
               ),
@@ -170,8 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     side: BorderSide(
                       color: Theme.of(context).colorScheme.outline,
                     ),
-                    borderRadius: const BorderRadius.all(Radius.circular(12))
-                ),
+                    borderRadius: const BorderRadius.all(Radius.circular(12))),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -191,7 +187,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ],
                     ),
-
                   ],
                 ),
               ),
@@ -203,8 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     side: BorderSide(
                       color: Theme.of(context).colorScheme.outline,
                     ),
-                    borderRadius: const BorderRadius.all(Radius.circular(12))
-                ),
+                    borderRadius: const BorderRadius.all(Radius.circular(12))),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -224,7 +218,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ],
                     ),
-
                   ],
                 ),
               ),
@@ -236,8 +229,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     side: BorderSide(
                       color: Theme.of(context).colorScheme.outline,
                     ),
-                    borderRadius: const BorderRadius.all(Radius.circular(12))
-                ),
+                    borderRadius: const BorderRadius.all(Radius.circular(12))),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -257,7 +249,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ],
                     ),
-
                   ],
                 ),
               ),
