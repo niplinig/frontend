@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/presentation/widgets/reservations/detalle_reserva.dart';
+// import 'package:frontend/presentation/widgets/reservations/detalle_reserva.dart';
 
 class MisPendientes extends StatelessWidget {
   const MisPendientes({super.key});
@@ -55,6 +55,7 @@ class MisPendientes extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
+                      Navigator.of(context).pushNamed("/detailreservation");
                       // Navigator.push(
                       //     context,
                       //     MaterialPageRoute(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/presentation/screens/reservations/reservations_screen.dart';
+import 'package:frontend/presentation/widgets/reservations/detalle_reserva.dart';
+import 'package:frontend/presentation/widgets/shared/my_drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +14,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: <String, WidgetBuilder>{
+        "/home": (BuildContext context) => const MyHomePage(title: 'Horarios'),
+        "/reservations": (BuildContext context) => const ReservationsScreens(),
+        "/detailreservation": (BuildContext context) => const DetalleReserva(),
+      },
+      initialRoute: "/home",
       title: 'FrontEnd Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.dark(),
         useMaterial3: true,
       ),
-      // home: const MyHomePage(title: 'Horarios'),
-      home: const ReservationsScreens(),
+      home: const MyHomePage(title: 'Horarios'),
+      //home: const ReservationsScreens(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -69,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
+      drawer: const MyDrawer(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.

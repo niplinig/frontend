@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/presentation/widgets/reservations/mis_pendientes.dart';
+import 'package:frontend/presentation/widgets/shared/my_drawer.dart';
 
 class ReservationsScreens extends StatelessWidget {
   const ReservationsScreens({super.key});
@@ -20,6 +21,7 @@ class ReservationsScreens extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Reservas'),
+          centerTitle: true,
           notificationPredicate: (ScrollNotification notification) {
             return notification.depth == 1;
           },
@@ -36,6 +38,7 @@ class ReservationsScreens extends StatelessWidget {
             ],
           ),
         ),
+        drawer: const MyDrawer(),
         body: TabBarView(
           children: <Widget>[
             const MisPendientes(),
