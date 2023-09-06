@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:frontend/data.dart';
+import 'package:frontend/models/data.dart';
 import 'package:frontend/more_info.dart';
 import 'package:frontend/presentation/widgets/shared/my_drawer.dart';
 import 'package:http/http.dart' as http;

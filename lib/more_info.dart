@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:convert';
-import 'data.dart';
+import 'models/data.dart';
 
 Future<List<Reservation>> fetchReservations(http.Client client) async {
   final response = await client.get(Uri.parse(
