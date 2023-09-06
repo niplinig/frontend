@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-// import 'package:frontend/presentation/widgets/reservations/detalle_reserva.dart';
+import 'package:frontend/entities/reservation.dart';
+import 'package:frontend/presentation/widgets/reservations/detalle_reserva.dart';
 
 class MisPendientes extends StatelessWidget {
-  const MisPendientes({super.key});
+  final Reservation reservation;
+  const MisPendientes({super.key, required this.reservation});
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +16,8 @@ class MisPendientes extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Esta Semana',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
           const SizedBox(height: 15),
-          const Text('Martes 15 de agosto'),
+          Text(reservation.date),
           const SizedBox(height: 15),
           Container(
             width: sizeScreen.width,
@@ -38,24 +33,27 @@ class MisPendientes extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Row(
+                  Row(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         backgroundImage: NetworkImage(
                             'https://predis.ai/top-instagram-accounts/leomessi.jpeg'),
                       ),
-                      SizedBox(width: 15),
+                      const SizedBox(width: 15),
                       Column(
                         children: [
-                          Text('Yoga (Peñas)'),
-                          Text('8:00 AM'),
+                          Text(
+                              '${reservation.place} (${reservation.building})'),
+                          Text(reservation.startHour),
                         ],
                       ),
                     ],
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed("/detailreservation");
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              DetalleReserva(reservation: reservation)));
                       // Navigator.push(
                       //     context,
                       //     MaterialPageRoute(
